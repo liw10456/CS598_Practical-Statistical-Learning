@@ -265,7 +265,6 @@ with st.expander("", expanded=True):
         # Display recommendations
         with st.container():
             num_movies = len(recommendations_hypothetical)
-            cols_per_row = 5  # Define number of columns per row
             rows = (num_movies + cols_per_row - 1) // cols_per_row  # Calculate rows required
 
             # Render movie recommendations in a grid
