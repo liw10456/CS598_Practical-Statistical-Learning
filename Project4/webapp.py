@@ -25,7 +25,7 @@ cols_per_row = 5  # Number of tiles per row
 @st.cache_data
 def load_data():
     # Load similarity matrix
-    similarity_matrix_top30 = pd.read_csv('similarity_matrix_top.csv', index_col=0)
+    similarity_matrix_top30 = pd.read_csv('similarity_matrix.csv', index_col=0)
     
     # Load popular movies
     popular_movies = pd.read_csv('popular_movies.csv', index_col=0)
