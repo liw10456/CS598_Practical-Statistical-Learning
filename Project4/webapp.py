@@ -7,6 +7,7 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
+
 from streamlit_star_rating import st_star_rating
 
 
