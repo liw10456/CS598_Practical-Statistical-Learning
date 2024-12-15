@@ -25,7 +25,7 @@ cols_per_row = 5  # Number of tiles per row
 @st.cache_data
 def load_data():
     # Load similarity matrix
-    similarity_matrix_top30 = pd.read_csv('similarity_matrix.csv', index_col=0)
+    similarity_matrix = pd.read_csv('similarity_matrix.csv', index_col=0)
     
     # Load popular movies
     popular_movies = pd.read_csv('popular_movies.csv', index_col=0)
@@ -40,13 +40,13 @@ def load_data():
     rating_matrix = pd.read_csv('Rmat.csv', index_col=0, na_values=['NA'])
     rating_matrix = rating_matrix.astype(float)
     
-    return similarity_matrix_top30, movies, popular_movies, rating_matrix
+    return similarity_matrix, movies, popular_movies, rating_matrix
 
 
 # In[ ]:
 
 
-similarity_matrix_top30, movies, popular_movies, rating_matrix = load_data()
+similarity_matrix, movies, popular_movies, rating_matrix = load_data()
 
 
 # Step 5: Implement myIBCF function
@@ -260,7 +260,7 @@ with st.expander("", expanded=True):
             hypothetical_user[movie_index] = star
 
         # Compute recommendations for the hypothetical user
-        recommendations_hypothetical = myIBCF(hypothetical_user, similarity_matrix_top30)
+        recommendations_hypothetical = myIBCF(hypothetical_user, similarity_matrix)
 
         # Display recommendations
         with st.container():
